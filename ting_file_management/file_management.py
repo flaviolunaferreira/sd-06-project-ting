@@ -7,9 +7,7 @@ def txt_importer(path_file):
     if not path_file.endswith('.txt'):
         sys.stderr.write('Formato inválido')
     try:
-        lines = ''
-        with open(path_file) as file:
-            lines = file.read().splitlines()
-        return lines
+        file = open(path_file)
+        return file.read().splitlines()
     except:
         sys.stderr.write(f'Arquivo {path_file} não encontrado\n')
