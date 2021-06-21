@@ -6,10 +6,13 @@ class Queue:
         return len(self._data)
 
     def enqueue(self, value):
-        return self._data.append(value)
+        if value not in self._data:
+            return self._data.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        value = self._data[0]
+        del self._data[0]
+        return value
 
     def search(self, index):
         """Aqui irá sua implementação"""
