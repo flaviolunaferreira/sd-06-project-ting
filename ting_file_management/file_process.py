@@ -25,4 +25,6 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """https://docs.python.org/pt-br/3/library/shutil.html"""
+    file_length = instance.__len__()
+    if position < 0 or file_length < position:
+        sys.stderr.write("Posição inválida")
