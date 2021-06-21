@@ -1,4 +1,3 @@
-from os import path
 import sys
 from ting_file_management.file_management import txt_importer
 
@@ -18,7 +17,12 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if instance.__len__() == 0:
+        return sys.stdout.write("Não há elementos\n")
+    instance.dequeue()
+    sys.stdout.write(
+        "Arquivo statics/arquivo_teste.txt removido com sucesso\n"
+    )
 
 
 def file_metadata(instance, position):
