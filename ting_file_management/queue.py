@@ -16,5 +16,5 @@ class Queue:
 
     def search(self, index):
         if index < 0:
-            return None
+            raise IndexError
         return self.unread_files[index]
