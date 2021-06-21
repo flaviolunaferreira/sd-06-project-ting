@@ -1,9 +1,6 @@
-from collections import deque
-
-
 class Queue:
     def __init__(self):
-        self.unread_files = deque()
+        self.unread_files = list()
 
     def __len__(self):
         return len(self.unread_files)
@@ -12,7 +9,7 @@ class Queue:
         self.unread_files.append(value)
 
     def dequeue(self):
-        return self.unread_files.pop_front()
+        return self.unread_files.pop(0)
 
     def search(self, index):
         if index < 0:
