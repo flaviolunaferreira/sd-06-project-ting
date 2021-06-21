@@ -21,4 +21,22 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    path_list = instance.return_data()
+    result = list()
+    for file in path_list:
+        content_file = txt_importer(file)
+        occcurrences = list()
+        for index, line in enumerate(content_file):
+            if word.casefold() in line.casefold():
+                occcurrences.append({
+                    "linha": index + 1,
+                    "conteudo": line
+                })
+        if len(occcurrences) != 0:
+            file_result = {
+                "palavra": word,
+                "arquivo": file,
+                "ocorrencias": occcurrences
+            }
+            result.append(file_result)
+    return result
