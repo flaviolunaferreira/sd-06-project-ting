@@ -15,4 +15,4 @@ class Queue:
         return value
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        return self._data[index]
