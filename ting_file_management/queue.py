@@ -21,3 +21,6 @@ class Queue:
 
     def find_file(self, path):
         return path in self._data
+
+    def return_data(self):
+        return self._data
