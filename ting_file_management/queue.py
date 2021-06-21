@@ -1,22 +1,18 @@
 class Queue:
     def __init__(self):
-        self.unread_file = list()
+        self.unread_files = deque()
 
     def __len__(self):
-        return len(self.unread_file)
+        return len(self.unread_files)
 
     def enqueue(self, value):
-        self.unread_file.append(value)
+        self.unread_files.append(value)
 
     def dequeue(self):
-        if self.is_empty():
-            return None
-        value = self.unread_file[0]
-        del self.unread_file[0]
-        return value
+        return self.unread_files.pop_front()
 
     def search(self, index):
-        if self.is_empty():
+        if index < 0:
             return None
-        value = self.unread_file[index]
-        return value
+        return self.unread_files[index]
+
