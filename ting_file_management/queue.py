@@ -18,3 +18,6 @@ class Queue:
             raise IndexError('list index out of range')
         if self._data:
             return self._data[index]
+
+    def find_file(self, path):
+        return path in self._data
