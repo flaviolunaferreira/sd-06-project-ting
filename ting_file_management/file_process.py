@@ -1,6 +1,7 @@
 from ting_file_management.file_management import txt_importer
 import sys
 
+
 def process(path_file, instance):
     file = txt_importer(path_file)
     for line in file:
@@ -12,6 +13,7 @@ def process(path_file, instance):
         "linhas_do_arquivo": file
     }
     sys.stdout.write(f'{result}\n')
+
 
 def remove(instance):
     """Aqui irá sua implementação"""
