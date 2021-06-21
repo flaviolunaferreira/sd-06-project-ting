@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Queue:
     def __init__(self):
         self.unread_files = deque()
@@ -15,4 +18,3 @@ class Queue:
         if index < 0:
             return None
         return self.unread_files[index]
-
