@@ -1,15 +1,22 @@
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self.unread_file = list()
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.unread_file)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self.unread_file.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        if self.is_empty():
+            return None
+        value = self.unread_file[0]
+        del self.unread_file[0]
+        return value
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if self.is_empty():
+            return None
+        value = self.unread_file[index]
+        return value
