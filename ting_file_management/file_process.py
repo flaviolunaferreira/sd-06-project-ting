@@ -16,8 +16,11 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
-
+    try:
+        instance.dequeue()
+        sys.stdout.write(f'{instance}\n')
+    except ValueError:
+        sys.stderr.write(f'Não há elementos\n')
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
