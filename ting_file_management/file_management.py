@@ -3,7 +3,7 @@ import sys
 
 # https://www.w3schools.com/python/ref_string_splitlines.asp
 def txt_importer(path_file):
-    
+
     if not path_file.endswith('.txt'):
         sys.stderr.write('Formato inválido')
     try:

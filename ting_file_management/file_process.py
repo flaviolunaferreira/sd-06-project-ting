@@ -20,11 +20,12 @@ def remove(instance):
         instance.dequeue()
         sys.stdout.write(f'{instance}\n')
     except ValueError:
-        sys.stderr.write(f'Não há elementos\n')
+        sys.stderr.write('Não há elementos')
+
 
 def file_metadata(instance, position):
     try:
         file = instance.search(position)
-        sys.stdout.write(str(file))
+        return sys.stdout.write(str(file))
     except IndexError:
-        sys.stderr.write(f'Posição inválida\n')
+        return sys.stderr.write('Posição inválida')
