@@ -4,15 +4,16 @@ from ting_file_management.file_management import txt_importer
 
 def process(path_file, instance):
     """Aqui irá sua implementação"""
-    file = txt_importer(path_file)
-    for item in file:
-        instance.enqueue(item)
     length = instance.__len__()
-    result = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": length,
-        "linhas_do_arquivo": file
-    }
+    if (length == 0):
+        file_read = txt_importer(path_file)
+        lines = len(file_read)
+        instance.enqueue(path_file)
+        result = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": lines,
+            "linhas_do_arquivo": file_read
+        }
     sys.stdout.write(f"{result}\n")
 
 
