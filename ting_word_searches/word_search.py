@@ -5,14 +5,12 @@ import re
 
 def exists_word(word, instance):
     data = instance.search(0)
-    match = re.search(word, data)
+    match = re.search(word, data['linhas_do_arquivo'][0])
     result = list()
     result.append({
         "palavra": word,
-        # arquivo hardcoded, como encontrar o path_file?
-        "arquivo": "statics/nome_pedro.txt",
-        # arquivo hardcoded, como encontrar o número de linhas?
-        "ocorrencias": [{"linha": 1}]
+        "arquivo": data['nome_do_arquivo'],
+        "ocorrencias": [{"linha": data['qtd_linhas']}]
     })
     if match:
         return result
