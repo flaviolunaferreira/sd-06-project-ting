@@ -3,32 +3,30 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    file = txt_importer(path_file)
-    for item in file:
-        instance.enqueue(item)
-    file_length = instance.__len__()
-    result = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": file_length,
-        "linhas_do_arquivo": file
-    }
-    sys.stdout.write(f"{result}\n")
+    if instance.__len__() < 1:
+        file = txt_importer(path_file)
+        result = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(file),
+            "linhas_do_arquivo": file
+        }
+        sys.stdout.write(str(result))
+        instance.enqueue(result)
 
 
 def remove(instance):
     length = instance.__len__()
     if length <= 0:
         return sys.stdout.write('Não há elementos\n')
-    instance.dequeue()
-    # arquivo hardcoded, como retornar o path_file?
+    deq = instance.dequeue()['nome_do_arquivo']
     sys.stdout.write(
-        'Arquivo statics/arquivo_teste.txt removido com sucesso\n'
+        f'Arquivo {deq} removido com sucesso\n'
     )
 
 
 def file_metadata(instance, position):
     try:
         search = instance.search(position)
-        return sys.stdout.write(search)
+        return sys.stdout.write(str(search))
     except IndexError:
         sys.stderr.write('Posição inválida')

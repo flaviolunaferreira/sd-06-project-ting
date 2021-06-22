@@ -4,7 +4,7 @@ import re
 
 
 def exists_word(word, instance):
-    data = instance.return_data()[0]
+    data = instance.search(0)
     match = re.search(word, data)
     result = list()
     result.append({
