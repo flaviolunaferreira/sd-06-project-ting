@@ -1,5 +1,3 @@
-from ting_file_management.file_process import process
-from ting_file_management.queue import Queue
 import re
 
 
@@ -36,8 +34,3 @@ def search_by_word(word, instance):
         return result
     else:
         return []
-
-
-project = Queue()
-process("statics/nome_pedro.txt", project)
-print(search_by_word("pedro", project))
