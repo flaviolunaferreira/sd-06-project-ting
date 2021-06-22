@@ -25,5 +25,5 @@ def file_metadata(instance, position):
 
 if __name__ == "__main__":
     project = Queue()
-    path = "/home/isabella/sd-06-projects/sd-06-project-ting/statics/arquivo_teste.txt"
+    path = "statics/arquivo_teste.txt"
     output = process(path, project)
