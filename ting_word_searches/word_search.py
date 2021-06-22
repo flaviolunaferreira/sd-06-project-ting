@@ -10,7 +10,9 @@ def exists_word(word, instance):
     result.append({
         "palavra": word,
         "arquivo": data['nome_do_arquivo'],
-        "ocorrencias": [{"linha": data['qtd_linhas']}]
+        "ocorrencias": [{
+            "linha": data['qtd_linhas']
+        }]
     })
     if match:
         return result
@@ -19,9 +21,23 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    data = instance.search(0)
+    match = re.search(word, data['linhas_do_arquivo'][0], re.IGNORECASE)
+    result = list()
+    result.append({
+        "palavra": word,
+        "arquivo": data['nome_do_arquivo'],
+        "ocorrencias": [{
+            "linha": data['qtd_linhas'],
+            "conteudo": data['linhas_do_arquivo'][0]
+        }]
+    })
+    if match:
+        return result
+    else:
+        return []
 
 
 project = Queue()
 process("statics/nome_pedro.txt", project)
-print(exists_word("maria", project))
+print(search_by_word("pedro", project))
