@@ -23,16 +23,3 @@ class Queue:
             return self.data.get(index)
         else:
             raise IndexError
-
-
-if __name__ == "__main__":
-    queue = Queue()
-    queue.enqueue(41)
-    queue.enqueue(42)
-    queue.enqueue(43)
-    # print(len(queue))
-    # first_out = queue.dequeue()
-    # print(len(queue))
-    # print(first_out)
-    search = queue.search(-1)
-    print(search)
