@@ -18,3 +18,6 @@ class Queue:
         if index < 0:
             raise IndexError
         return self.fila[index]
+
+    def return_data(self):
+        return self.fila
