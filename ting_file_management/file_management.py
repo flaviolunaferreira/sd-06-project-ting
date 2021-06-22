@@ -12,7 +12,3 @@ def txt_importer(path_file):
             return print("Formato inválido", file=sys.stderr)
     except OSError:
         print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
-
-
-if __name__ == "__main__":
-    txt = txt_importer("/home/isabella/sd-06-projects/sd-06-project-ting/statics/arquivo_teste.txt")
