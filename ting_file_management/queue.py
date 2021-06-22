@@ -18,7 +18,6 @@ class Queue:
         return value_dequeue
 
     def search(self, index):
-        print(self.data)
         if index in self.data.keys():
             return self.data.get(index)
         else:
