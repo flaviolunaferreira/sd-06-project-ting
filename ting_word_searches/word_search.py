@@ -1,7 +1,3 @@
-from ting_file_management.file_process import process
-from ting_file_management.queue import Queue
-
-
 def get_occurances(word, instance):
     length_instance = len(instance)
     occurances = []
@@ -58,13 +54,3 @@ def search_by_word(word, instance):
         search_word_results["arquivo"] = item.get("nome_do_arquivo")
         search_word_results["ocorrencias"] = occurances_content
     return [search_word_results]
-
-
-if __name__ == "__main__":
-    project = Queue()
-    path = "statics/nome_pedro.txt"
-    process(path, project)
-    word_search = search_by_word("pedro", project)
-    print(word_search)
-    # word_occurances = get_word_occurances("de", project)
-    # print(word_occurances)

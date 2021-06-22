@@ -1,4 +1,3 @@
-from ting_file_management.queue import Queue
 from ting_file_management.file_management import txt_importer
 import sys
 
@@ -35,11 +34,3 @@ def file_metadata(instance, position):
         return sys.stdout.write(str(get_data))
     except IndexError:
         return sys.stderr.write("Posição inválida")
-
-
-if __name__ == "__main__":
-    project = Queue()
-    path = "statics/arquivo_teste.txt"
-    output = process(path, project)
-    # remove_file = remove(project)
-    # item = file_metadata(project, 3)
