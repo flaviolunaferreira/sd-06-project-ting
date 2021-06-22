@@ -19,7 +19,6 @@ def remove(instance):
     if instance.__len__() == 0:
         return sys.stdout.write("Não há elementos\n")
     removed_file = instance.dequeue()
-    print(removed_file)
     return sys.stdout.write(
         f"Arquivo {removed_file['nome_do_arquivo']} removido com sucesso\n"
     )

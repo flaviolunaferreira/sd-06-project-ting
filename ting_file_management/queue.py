@@ -1,6 +1,7 @@
 class Queue:
     def __init__(self):
         self.__queue = []
+        self.test = "tes"
 
     def __len__(self):
         return len(self.__queue)
