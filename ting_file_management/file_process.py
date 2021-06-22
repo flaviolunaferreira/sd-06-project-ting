@@ -8,7 +8,7 @@ def process(path_file, instance):
     for item in file:
         instance.enqueue(item)
     length = instance.__len__()
-    result {
+    result = {
         "nome_do_arquivo": path_file,
         "qtd_linhas": length,
         "linhas_do_arquivo": file
