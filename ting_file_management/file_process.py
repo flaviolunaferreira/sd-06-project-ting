@@ -23,6 +23,7 @@ def remove(instance):
     removed_file = instance.dequeue()
     return sys.stdout.write(f"Arquivo {removed_file} removido com sucesso\n")
 
+
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
     if (position > instance.__len__() - 1 or position < 0):
