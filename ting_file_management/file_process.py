@@ -4,23 +4,31 @@ import sys
 
 def process(path_file, instance):
     file = txt_importer(path_file)
-    for line in file:
-        instance.enqueue(line)
-    line_qtd = instance.__len__()
     result = {
         "nome_do_arquivo": path_file,
-        "qtd_linhas": line_qtd,
+        "qtd_linhas": len(file),
         "linhas_do_arquivo": file
     }
+    exists_duplicate = False
+
+    for n in range(len(instance)):
+        if instance.search(n)["nome_do_arquivo"] == result["nome_do_arquivo"]:
+            exists_duplicate = True
+            break
+
+    if not exists_duplicate:
+        instance.enqueue(result)
+
     sys.stdout.write(f'{result}\n')
 
 
 def remove(instance):
-    try:
-        instance.dequeue()
-        sys.stdout.write(f'Arquivo {instance} removido com sucesso\n')
-    except ValueError:
-        sys.stderr.write('Não há elementos')
+    if len(instance) > 0:
+        removed_file = instance.dequeue()
+        removed_file_name = removed_file.get("nome_do_arquivo")
+        sys.stdout.write(f'Arquivo {removed_file_name} removido com sucesso\n')
+    else:
+        sys.stdout.write('Não há elementos\n')
 
 
 def file_metadata(instance, position):
