@@ -23,6 +23,6 @@ class Queue:
         if index < 0:
             raise IndexError
         return self.queue[index]
-    
+
     def return_data(self):
         return self.queue
