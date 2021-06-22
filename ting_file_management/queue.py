@@ -1,15 +1,29 @@
+FIRST_ITEM_INDEX = 0
+NO_ITEMS = 0
+
+
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self.queue = []
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.queue)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self.queue.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        if len(self.queue) == NO_ITEMS:
+            return None
+
+        out_item = self.queue.pop(FIRST_ITEM_INDEX)
+
+        return out_item
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        queue_size = len(self.queue)
+
+        if index >= queue_size or index < NO_ITEMS:
+            raise IndexError("Posição inválida")
+
+        return self.queue[index]
