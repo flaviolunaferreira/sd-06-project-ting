@@ -18,7 +18,7 @@ def process(path_file, instance):
 def remove(instance):
     try:
         instance.dequeue()
-        sys.stdout.write(f'{instance}\n')
+        sys.stdout.write(f'Arquivo {instance} removido com sucesso\n')
     except ValueError:
         sys.stderr.write('Não há elementos')
 
