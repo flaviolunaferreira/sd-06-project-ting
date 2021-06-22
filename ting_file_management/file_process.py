@@ -9,12 +9,12 @@ def process(path_file, instance):
         file_read = txt_importer(path_file)
         lines = len(file_read)
         instance.enqueue(path_file)
-        result = {
+        formated_info = {
             "nome_do_arquivo": path_file,
             "qtd_linhas": lines,
             "linhas_do_arquivo": file_read
         }
-    sys.stdout.write(f"{result}\n")
+    sys.stdout.write(f"{formated_info}\n")
 
 
 def remove(instance):
