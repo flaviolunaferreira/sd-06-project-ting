@@ -1,10 +1,10 @@
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    pass
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    pass
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    pass
