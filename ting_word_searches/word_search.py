@@ -1,5 +1,4 @@
 def exists_word(word, instance):
-
     results = []
 
     for index in range(len(instance)):
@@ -26,4 +25,4 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-     """Aqui irá sua implementação"""
+    """Aqui irá sua implementação"""
