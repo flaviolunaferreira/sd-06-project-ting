@@ -10,15 +10,15 @@ def process(path_file, instance):
         file = txt_importer(path_file)
         path_list.append(path_file)
 
-        file_name = f"'nome_do_arquivo': '{path_file}'"
-        lines_qtd = f"'qtd_linhas': {len(file)}"
-        lines = f"'linhas_do_arquivo': {file}"
+        solution = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(file),
+            "linhas_do_arquivo": file
+        }
 
-        sys.stdout.write(f'{file_name}')
-        sys.stdout.write(f'{lines_qtd}')
-        sys.stdout.write(f'{lines}')
+        sys.stdout.write(f'{solution}\n')
 
-        instance.enqueue(path_file)
+        return instance.enqueue(solution)
     else:
         pass
 
@@ -37,4 +37,4 @@ def file_metadata(instance, position):
     if position < 0 or position > len(path_list):
         sys.stderr.write('Posição inválida\n')
     else:
-        sys.stdout.write(instance.search(position))
+        sys.stdout.write(f'{instance.search(position)}')
