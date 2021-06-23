@@ -9,15 +9,15 @@ def process(path_file, instance):
         file = txt_importer(path_file)
         path_list.append(path_file)
 
-        file_name = f"'nome_do_arquivo': '{path_file}'"
-        qt_lines = f"'qtd_linhas': {len(file)}"
-        lines = f"'linhas_do_arquivo': {file}"
+        obj = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(file),
+            "linhas_do_arquivo": file
+        }
 
-        sys.stdout.write(f'{file_name}')
-        sys.stdout.write(f'{qt_lines}')
-        sys.stdout.write(f'{lines}')
+        sys.stdout.write(f'{obj}\n')
 
-        instance.enqueue(path_file)
+        return instance.enqueue(obj)
     else:
         pass
 
