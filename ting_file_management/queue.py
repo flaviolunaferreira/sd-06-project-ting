@@ -1,18 +1,26 @@
 class Queue:
     def __init__(self):
-        self.data = list()
+        self._data = list()
 
     def __len__(self):
-        return len(self.data)
+        return len(self._data)
 
     def enqueue(self, value):
-        self.data.append(value)
+        self._data.append(value)
 
     def dequeue(self):
-        return self.data.pop(0)
+        if self._data:
+            return self._data.pop(0)
+        return None
 
     def search(self, index):
-        if 0 <= index < len(self.data):
-            return self.data[index]
-        else:
-            raise IndexError
+        if index not in range(self.__len__()):
+            raise IndexError('list index out of range')
+        if self._data:
+            return self._data[index]
+
+    def find_file(self, path):
+        return path in self._data
+
+    def return_data(self):
+        return self._data
