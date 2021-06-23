@@ -1,6 +1,7 @@
 import os.path
 import sys
 
+
 def txt_importer(path_file):
     if not os.path.isfile(path_file):
         return sys.stderr.write(
