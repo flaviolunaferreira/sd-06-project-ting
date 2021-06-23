@@ -3,7 +3,6 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
     data = txt_importer(path_file)
     file = {}
 
@@ -16,7 +15,6 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
     if not len(instance):
         return sys.stdout.write('Não há elementos\n')
 
