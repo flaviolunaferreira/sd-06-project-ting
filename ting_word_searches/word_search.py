@@ -1,5 +1,3 @@
-import sys
-
 def exists_word(word, instance):
     matches = []
     for index in range(len(instance)):
